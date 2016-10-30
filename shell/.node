@@ -1,0 +1,4 @@
+export NVM_DIR="/Users/jeremy/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+alias nig="npm install -g"

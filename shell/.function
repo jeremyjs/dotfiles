@@ -1,0 +1,15 @@
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+function new-project () {
+  dirname="$1"
+  remoteurl="$2"
+  mkdir -p $dirname
+  cd $dirname
+  git init
+  echo "# $dirname" >> README.md
+  git add -A
+  git commit -m 'initial commit'
+  git remote add origin $remoteurl
+  git push -u origin master
+}
+

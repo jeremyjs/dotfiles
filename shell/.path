@@ -1,0 +1,6 @@
+PATH=/usr/local/bin:$PATH
+PATH=$HOME/bin:$PATH # Add `~/bin` to the `$PATH`
+PATH=/usr/local/share/npm/bin:$PATH
+PATH=/usr/local/share/python:$PATH
+PATH=/usr/local/mysql/bin:$PATH
+export PATH
