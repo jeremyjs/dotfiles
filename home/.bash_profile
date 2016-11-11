@@ -1,11 +1,11 @@
-source $HOME/dotfiles/.bash_env
+source $HOME/.bash_env
 
 # Load the shell dotfiles, and then some:
 # * ~/dotfiles/shell/.path can be used to extend `$PATH`.
 # * ~/dotfiles/shell/.local can be used for other settings you don’t want to commit.
 # path,exports,aliases,functions,git,python,ruby,local
-for file in $HOME/dotfiles/shell/.{path,alias,function,git,node,python,ruby,local}; do
-  [ -r "$file" ] && source "$file"
+for file in $HOME/dotfiles/shell/.*; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
 
@@ -22,3 +22,6 @@ export PATH
 # added by Anaconda3 4.2.0 installer
 export PATH="/Users/jeremy/anaconda/bin:$PATH"
 
+
+# added by Anaconda2 4.2.0 installer
+export PATH="/Users/jeremy/anaconda2/bin:$PATH"

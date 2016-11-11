@@ -5,12 +5,13 @@
 # done
 # unset file
 
-mkdir ~/dotfiles/bak/ &> /dev/null
-mv ~/.bash_profile ~/dotfiles/bak/
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 # [ -r "$HOME/dotfiles/home/.vimrc" ] && ln -s ~/dotfiles/home/.vimrc ~/.vimrc
 for file in $HOME/dotfiles/home/.*; do
-  [ -r "$file" ] && [ -f "$file" ] && ln -s $file ~/$(basename $file)
+  if [ -r "$file" ] && [ -f "$file" ] ; then
+    mkdir -p ~/dotfiles/bak/home/
+    mv -f ~/$(basename $file) ~/dotfiles/bak/home/ &> /dev/null
+    ln -sf $file ~/$(basename $file)
+  fi
 done
 unset file
 # for file in $HOME/dotfiles/home/.{vimrc,}; do
