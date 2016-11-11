@@ -1,2 +1,2 @@
 alias reload="source ~/.bash_profile"
-
+alias l="ls -Ahlp | sort -r"
