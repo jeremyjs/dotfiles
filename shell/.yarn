@@ -1,0 +1,3 @@
+alias ya="yarn add --exact"
+alias yad="yarn add --exact --dev"
+alias yr="yarn remove"
