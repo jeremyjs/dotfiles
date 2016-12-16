@@ -22,6 +22,5 @@ export PATH
 # added by Anaconda3 4.2.0 installer
 export PATH="/Users/jeremy/anaconda/bin:$PATH"
 
-
 # added by Anaconda2 4.2.0 installer
 export PATH="/Users/jeremy/anaconda2/bin:$PATH"

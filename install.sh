@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # for file in .{bash_profile,gitconfig}; do
 #   [ -r "$HOME/dotfiles/$file" ] && rm $HOME/$file && ln -s $HOME/dotfiles/$file $HOME/$file
 # done
@@ -14,8 +14,10 @@ for file in $HOME/dotfiles/home/.*; do
   fi
 done
 unset file
+
 # for file in $HOME/dotfiles/home/.{vimrc,}; do
 #   [ -r "$file" ] && ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 # done
 # unset file
+
 source ~/.bash_profile
