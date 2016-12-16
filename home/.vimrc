@@ -1,5 +1,6 @@
 set title                       " set the title
 set relativenumber
+set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
