@@ -1,3 +1,4 @@
 alias reload="source ~/.bash_profile"
+alias reinstall="~/dotfiles/install.sh"
 alias la="ls -al"
 alias l="ls -Ahlp | sort -r"
