@@ -15,9 +15,10 @@ for file in $HOME/dotfiles/home/.*; do
 done
 unset file
 
-# for file in $HOME/dotfiles/home/.{vimrc,}; do
-#   [ -r "$file" ] && ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-# done
-# unset file
+mkdir -p ~/.vim/ftplugin/
+for file in $HOME/dotfiles/vim/ftplugin/*; do
+  [ -r "$file" ] && ln -sf $file ~/.vim/ftplugin/$(basename $file)
+done
+unset file
 
 source ~/.bash_profile
