@@ -42,6 +42,7 @@ let mapleader = ","
 nnoremap <leader><space> :noh<CR>
 " imap jj <Esc>
 imap jk <Esc>
+imap JK <Esc>
 nnoremap ; :
 noremap Y $
 noremap T ^
