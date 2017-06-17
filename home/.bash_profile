@@ -24,3 +24,6 @@ export PATH="/Users/jeremy/anaconda/bin:$PATH"
 
 # added by Anaconda2 4.2.0 installer
 export PATH="/Users/jeremy/anaconda2/bin:$PATH"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
