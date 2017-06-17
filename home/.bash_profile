@@ -27,3 +27,6 @@ export PATH="/Users/jeremy/anaconda2/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# increase open file limit on MacOS to a reasonable number for developing node.js applications
+ulimit -n 65536 65536
+
