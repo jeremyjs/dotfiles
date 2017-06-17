@@ -1,3 +1,5 @@
 alias ya="yarn add --exact"
 alias yad="yarn add --exact --dev"
+alias yga="yarn global add"
+alias yi="yarn install"
 alias yr="yarn remove"
