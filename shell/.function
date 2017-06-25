@@ -38,3 +38,4 @@ function git-remote-add-func () {
     git remote add $NAME https://github.com/$REMOTE
   fi
 }
+
