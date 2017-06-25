@@ -16,13 +16,14 @@ export LC_CTYPE=en_US.UTF-8
 ulimit -n 65536 65536
 
 parse_git_dirty () {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+  git status 2> /dev/null | grep -q "nothing to commit, working tree clean" || echo "*"
 }
 parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 parse_git () {
-  echo "$BROWNORANGE($(parse_git_branch)) $RED$(parse_git_dirty)$NC"
+  # TODO: echo "$BROWNORANGE($(parse_git_branch)) $RED$(parse_git_dirty)$NC"
+  echo "$BROWNORANGE($(parse_git_branch))$NC"
 }
 export PS1="\u@\h $GREEN\w $(parse_git)$NC $ "
 
