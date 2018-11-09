@@ -17,8 +17,12 @@ unset file
 
 mkdir -p ~/.vim/ftplugin/
 for file in $HOME/dotfiles/vim/ftplugin/*; do
-  [ -r "$file" ] && ln -sf $file ~/.vim/ftplugin/$(basename $file)
+  if [ -r "$file" ] && [ -f "$file" ] ; then
+    ln -sf $file ~/.vim/ftplugin/$(basename $file)
+  fi
 done
 unset file
 
 source ~/.bash_profile
+source ~/.zshrc
+
