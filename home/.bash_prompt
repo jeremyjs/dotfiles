@@ -1,18 +1,17 @@
-# parse_git_dirty () {
-#   git status 2> /dev/null | grep -q "nothing to commit, working tree clean" || echo "*"
+# parse_dirty () {
+#   git status 2> /dev/null | grep -q "nothing to commit, working tree clean" || echo " *"
 # }
 
-parse_git_branch () {
+parse_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' -e 's/jeremyjs.//g'
 }
 
-# parse_git () {
-#   # TODO: echo "$BROWNORANGE($(parse_git_branch)) $RED$(parse_git_dirty)$NC"
-#   echo "$BROWNORANGE($(parse_git_branch))$NC"
-# }
-
-parent_dirname () {
-  pwd | sed -e 's/([^\/]*\/)*//g'
+git_prompt () {
+  if [ -z "$(parse_branch)" ]; then
+    echo ""
+  else
+    echo "($(parse_branch)) "
+  fi
 }
 
-export PS1="\u@\h \[$GREEN\]\W \[$BROWNORANGE\]($(parse_git_branch))\[$NC\] $ "
+PS1="\u@\h \[$GREEN\]\W \[$BROWNORANGE\]\$(git_prompt)\[$NC\]$ "

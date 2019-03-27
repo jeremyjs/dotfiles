@@ -1,3 +1,6 @@
+References
+- https://github.com/dylanaraps/pure-bash-bible
+
 My Setup
 - system
   - MacOS for dev; Linux for devops
@@ -56,4 +59,3 @@ Inspiration & Ideas
 - https://github.com/mathiasbynens/dotfiles
 - ls - https://raw.githubusercontent.com/nicolashery/mac-dev-setup/master/.aliases
 - Bash Prompt - https://raw.githubusercontent.com/nicolashery/mac-dev-setup/master/.bash_prompt
-

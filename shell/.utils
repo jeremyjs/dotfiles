@@ -1,21 +1,22 @@
 str_split () {
+  OIFS=$IFS
   IFS="$1"
   STR="$2"
-  
-  OIFS=$IFS
-  for s in $STR; do
-    echo "> [$s]"
-  done
+  OUT=(${STR[@]})
+  echo "${OUT[@]}"
   IFS=$OIFS
 }
 
-tail () {
-  if [[ $1 =~ ^[-+]?[0-9]+$ ]]; then
-    INDEX="$1"
-    ARY="$2"
-    echo ${ARY[$INDEX]}
+str_tail () {
+  ARGS=(${@:0})
+  NARGS=$#
+  if [[ ${ARGS[0]} =~ ^[-+]?[0-9]+$ ]]; then
+    TAIL=$(($NARGS - 1))
+    INDEX="${ARGS[0]}"
+    ARY=(${@:2})
+    echo "${ARY[TAIL-INDEX]}"
   else
-    ARY=($@)
-    echo "${ARY[-1]}"
+    ARY=${ARGS[@]}
+    echo "${ARY[NARGS-1]}"
   fi
 }
