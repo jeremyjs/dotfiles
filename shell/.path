@@ -1,7 +1,8 @@
-PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH # Add `~/bin` to the `$PATH`
 PATH=/usr/local/share/npm/bin:$PATH
-PATH=/usr/local/share/python:$PATH
+# PATH=/usr/local/share/python:$PATH
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 PATH=/usr/local/mysql/bin:$PATH
 PATH=/Applications/Racket\ v6.7/bin:$PATH
+PATH=/Users/jeremy/MagicLeap/mlsdk/v0.17.0/tools/mldb:$PATH
 export PATH
