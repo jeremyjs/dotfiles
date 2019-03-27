@@ -120,6 +120,7 @@ vnoremap <S-Tab> <gv
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " nerdcommenter
