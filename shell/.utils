@@ -1,0 +1,21 @@
+str_split () {
+  IFS="$1"
+  STR="$2"
+  
+  OIFS=$IFS
+  for s in $STR; do
+    echo "> [$s]"
+  done
+  IFS=$OIFS
+}
+
+tail () {
+  if [[ $1 =~ ^[-+]?[0-9]+$ ]]; then
+    INDEX="$1"
+    ARY="$2"
+    echo ${ARY[$INDEX]}
+  else
+    ARY=($@)
+    echo "${ARY[-1]}"
+  fi
+}
