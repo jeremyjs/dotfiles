@@ -25,9 +25,15 @@ source $HOME/.bash_prompt
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
-# added by Anaconda3 4.2.0 installer
-export PATH="/Users/jeremy/anaconda/bin:$PATH"
-export PATH="/Users/jeremy/anaconda2/bin:$PATH"
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/jeremy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# Have to add /usr/local/bin to the PATH last
+PATH=/usr/local/bin:$PATH
+export PATH
