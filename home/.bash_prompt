@@ -15,3 +15,4 @@ git_prompt () {
 }
 
 PS1="\u@\h \[$GREEN\]\W \[$BROWNORANGE\]\$(git_prompt)\[$NC\]$ "
+
