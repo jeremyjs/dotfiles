@@ -34,6 +34,20 @@ if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/jeremy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
+# brew completions
+HOMEBREW_PREFIX=$(brew --prefix)
+if type brew &>/dev/null; then
+  for COMPLETION in "$HOMEBREW_PREFIX"/etc/bash_completion.d/*
+  do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+  if [[ -f ${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh ]];
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  fi
+fi
+
 # Have to add /usr/local/bin to the PATH last
 PATH=/usr/local/bin:$PATH
 export PATH
+
