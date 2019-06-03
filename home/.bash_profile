@@ -47,6 +47,9 @@ if type brew &>/dev/null; then
   fi
 fi
 
+# asdf
+source $(brew --prefix asdf)/asdf.sh
+
 # Have to add /usr/local/bin to the PATH last
 PATH=/usr/local/bin:$PATH
 export PATH
