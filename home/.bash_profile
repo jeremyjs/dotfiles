@@ -15,15 +15,22 @@ export LC_CTYPE=en_US.UTF-8
 # increase open file limit on MacOS to a reasonable number for developing node.js applications
 ulimit -n 65536 65536
 
+# Default Shell
+export SHELL="/usr/local/bin/bash"
+export BASH_SHELL="/usr/local/bin/bash"
+
 # Prompt
 source $HOME/.bash_prompt
 
 # VENDOR
 
+# keychain
+eval `keychain --eval --agents ssh --inherit any id_rsa`
+
 # Setting PATH for Python 3.5
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
+# PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+# export PATH
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
@@ -47,10 +54,16 @@ if type brew &>/dev/null; then
   fi
 fi
 
-# asdf
-source $(brew --prefix asdf)/asdf.sh
-
 # Have to add /usr/local/bin to the PATH last
 PATH=/usr/local/bin:$PATH
 export PATH
+
+# pyenv root must precede /usr/local/bin
+export PATH="$(pyenv root)/shims:$PATH"
+
+# fnm
+eval "$(fnm env --multi)"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+source /Users/jeremy/Development/commonstock/releaser/cs-completion.bash
 
