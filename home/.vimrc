@@ -121,6 +121,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'wakatime/vim-wakatime'
+Plug 'tomlion/vim-solidity'
 call plug#end()
 
 " nerdcommenter
