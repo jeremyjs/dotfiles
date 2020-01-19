@@ -61,9 +61,6 @@ export PATH
 # pyenv root must precede /usr/local/bin
 export PATH="$(pyenv root)/shims:$PATH"
 
-# fnm
-eval "$(fnm env --multi)"
-
 export PATH="$HOME/.cargo/bin:$PATH"
 source /Users/jeremy/Development/commonstock/releaser/cs-completion.bash
 
