@@ -1,13 +1,14 @@
 #!/bin/bash
 
+source ~/dotfiles/shell/.function
+
 # for file in .{bash_profile,gitconfig}; do
 #   [ -r "$HOME/dotfiles/$file" ] && rm $HOME/$file && ln -s $HOME/dotfiles/$file $HOME/$file
 # done
 # unset file
 
-# [ -r "$HOME/dotfiles/home/.vimrc" ] && ln -s ~/dotfiles/home/.vimrc ~/.vimrc
-for file in $HOME/dotfiles/home/.*; do
-  if [ -r "$file" ] && [ -f "$file" ] ; then
+for file in $HOME/dotfiles/home/.[!.]*; do
+  if [ -r "$file" ] && ([ -f "$file" ] || [ -d "$file" ]) ; then
     mkdir -p ~/dotfiles/bak/home/
     mv -f ~/$(basename $file) ~/dotfiles/bak/home/ &> /dev/null
     ln -sf $file ~/$(basename $file)
@@ -23,6 +24,8 @@ for file in $HOME/dotfiles/vim/ftplugin/*; do
 done
 unset file
 
-source ~/.bash_profile
-source ~/.zshrc
+include ~/.bash_profile
+# include ~/.zshrc
+
+reset
 

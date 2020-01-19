@@ -1,3 +1,5 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 source $HOME/.bash_env
 
 # Load the shell dotfiles, and then some:
@@ -22,10 +24,15 @@ export BASH_SHELL="/usr/local/bin/bash"
 # Prompt
 source $HOME/.bash_prompt
 
+# neovim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 # VENDOR
 
 # keychain
-eval `keychain --eval --agents ssh --inherit any id_rsa`
+eval `keychain --eval --agents ssh --inherit any id_rsa bitbucket github`
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc'; fi

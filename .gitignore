@@ -3,3 +3,5 @@ bak/**
 env/**
 .local
 .wakatime.cfg
+
+!/shell/.git

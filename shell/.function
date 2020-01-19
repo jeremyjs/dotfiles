@@ -2,6 +2,8 @@ GIT_USERNAME_PATTERN="\w+-?\w+(?!-)"
 GIT_REPONAME_PATTERN="([-_\\w]+)\\/([-_.\\w]+)"
 GIT_PATH_PATTERN="^$GIT_USERNAME_PATTERN/$GIT_REPONAME_PATTERN$"
 
+function include () { [[ -f "$1" ]] && source "$1"; }
+
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 function new-project () {
