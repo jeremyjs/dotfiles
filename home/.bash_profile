@@ -27,14 +27,6 @@ source $HOME/.bash_prompt
 # keychain
 eval `keychain --eval --agents ssh --inherit any id_rsa`
 
-# Setting PATH for Python 3.5
-# The original version is saved in .bash_profile.pysave
-# PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-# export PATH
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
@@ -61,6 +53,5 @@ export PATH
 # pyenv root must precede /usr/local/bin
 export PATH="$(pyenv root)/shims:$PATH"
 
-export PATH="$HOME/.cargo/bin:$PATH"
 source /Users/jeremy/Development/commonstock/releaser/cs-completion.bash
 
