@@ -32,7 +32,7 @@ fi
 # VENDOR
 
 # keychain
-eval `keychain --eval --agents ssh --inherit any id_rsa bitbucket github`
+eval `keychain --eval --agents ssh --inherit any id_rsa`
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jeremy/Downloads/google-cloud-sdk/path.bash.inc'; fi
